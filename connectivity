@@ -1,0 +1,47 @@
+/* 5 steps to connect to database in Java 
+register the drive class
+creating connection
+creating statements
+executing queries
+closing connection*/
+
+// register the drive class syntax the syntax of CLass class is used to register the driver class. This method is used to load driver class.
+
+public static void forName(String className)throws ClassNotFoundException
+
+// Example to register the Oracle Driver Class 
+
+Class.forName("oracle.jdbc.driver.OracleDriver"); 
+
+// The getConnection() method of DriverManager class is used to establish connection with the database.
+
+    1) public static Connection getConnection(String url)throws SQLException  
+    2) public static Connection getConnection(String url,String name,String password)  
+    throws SQLException  
+    
+        Connection con=DriverManager.getConnection(  
+    "jdbc:oracle:thin:@localhost:1521:xe","system","password");  
+    
+    // The createStatement() method of Connection interface is used to create statement. The object of statement is responsible to execute queries with the database. 
+
+public Statement createStatement()throws SQLException
+
+// Example to create statement object
+
+Statement stmt=con.createStatement();  
+
+// Execute the query, syntax of executeQuery() method
+
+    public ResultSet executeQuery(String sql)throws SQLException  
+    
+    // Example 
+    
+    while(rs.next()){  
+System.out.println(rs.getInt(1)+" "+rs.getString(2));  
+}  
+
+// Close the connection use syntax of close method example as follows
+
+con.close();
+
+
