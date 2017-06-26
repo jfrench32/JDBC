@@ -59,7 +59,7 @@ Example to execute query
     System.out.println(rs.getInt(1)+" "+rs.getString(2));  
     }  
     
-    5) Close the connection object
+5) Close the connection object
 By closing connection object statement and ResultSet will be closed automatically. The close() method of Connection interface is used to close the connection.
 Syntax of close() method
 
